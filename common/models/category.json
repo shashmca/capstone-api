@@ -1,0 +1,70 @@
+{
+  "name": "Category",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "scope": {
+    "include": "subCategories"
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "string"
+    },
+    "imageAlt": {
+      "type": "string"
+    },
+    "creation_date": {
+      "type": "date"
+    },
+    "last_modified_date": {
+      "type": "date"
+    },
+    "is_active": {
+      "type": "boolean"
+    },
+    "is_featured": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "parent_categories": {
+      "type": "hasMany",
+      "model": "category",
+      "foreignKey": "",
+      "scope": {
+        "include": "category"
+      }
+    },
+    "subCategories": {
+      "type": "hasMany",
+      "model": "Category",
+      "foreignKey": "categoryId",
+      "options": {
+        "nestRemoting": true
+      },
+      "scope": {
+        "fields": [
+          "id",
+          "categoryId"
+        ]
+      }
+    },
+    "products": {
+      "type": "hasAndBelongsToMany",
+      "model": "Product",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

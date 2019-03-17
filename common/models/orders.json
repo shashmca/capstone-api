@@ -1,0 +1,48 @@
+{
+  "name": "orders",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "createdAt": {
+      "type": "date"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "products": {
+      "type": [
+        {
+          "product": "string",
+          "sku": "string",
+          "productDetails": "object",
+          "qty": "number"
+        }
+      ]
+    },
+    "status": {
+      "type": "number"
+    },
+    "updatedAt": {
+      "type": "date"
+    },
+    "deliveryDate": {
+      "type": "date"
+    },
+    "totalAmount": {
+      "type": "number"
+    },
+    "shippingAddress": {
+      "type": "object"
+    },
+    "billingAddress": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

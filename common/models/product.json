@@ -1,0 +1,80 @@
+{
+  "name": "Product",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "scope": {
+    "include": "categories"
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "object",
+      "required": true
+    },
+    "short_desc": {
+      "type": "string"
+    },
+    "long_desc": {
+      "type": "string"
+    },
+    "prod_detail": {
+      "type": "object"
+    },
+    "subcategory": {
+      "type": "string"
+    },
+    "is_trending": {
+      "type": "Boolean"
+    },
+    "is_active": {
+      "type": "Boolean"
+    },
+    "date_created": {
+      "type": "date"
+    },
+    "date_updated": {
+      "type": "date"
+    },
+    "variants": {
+      "type": [{
+        "attrs": {
+          "type": [{
+            "name": "string",
+            "value": "string",
+            "isFilter": "Boolean"
+          }]
+        },
+        "sku": "string",
+        "isDefault": "Boolean",
+        "qty": "Number",
+        "images": [{
+          "isDefault": "Boolean",
+          "path": "string",
+          "imageAlt": ""
+        }],
+        "thumbnail": "string",
+        "list_price": "number",
+        "sale_price": "number"
+      }]
+    }
+  },
+  "validations": [],
+  "relations": {
+    "categories": {
+      "type": "hasAndBelongsToMany",
+      "model": "Category",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

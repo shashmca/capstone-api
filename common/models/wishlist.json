@@ -1,0 +1,26 @@
+{
+  "name": "wishlist",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "userId": {
+      "type": "string"
+    },
+    "products": {
+      "type": [
+        {
+          "product": "string",
+          "sku": "string",
+          "productDetails": "object"
+        }
+      ]
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,44 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "Category": {
+    "dataSource": "gifts",
+    "public": true
+  },
+  "Product": {
+    "dataSource": "gifts",
+    "public": true
+  },
+  "user": {
+    "dataSource": "gifts",
+    "public": true
+  },
+  "cart": {
+    "dataSource": "gifts",
+    "public": true
+  },
+  "wishlist": {
+    "dataSource": "gifts",
+    "public": true
+  },
+  "orders": {
+    "dataSource": "gifts",
+    "public": true
+  },
+  "Event": {
+    "dataSource": "gifts",
+    "public": true
+  }
+}

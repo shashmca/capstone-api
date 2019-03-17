@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "gifts": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "giftdb",
+    "password": "",
+    "name": "gifts",
+    "user": "",
+    "connector": "mongodb"
+  }
+}
